@@ -166,39 +166,39 @@ Installed google maps react using the command   npm install --save google-maps-r
      
 Added google map to Map.jsx
 
-import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-// import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import {Link} from 'react-router-dom'
+        import React, { Component } from 'react';
+        import { Map, GoogleApiWrapper } from 'google-maps-react';
+        // import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+        import {Link} from 'react-router-dom'
 
 
-const mapStyles = {
-  width: '100%',
-  height: '100%'
-};
+        const mapStyles = {
+          width: '100%',
+          height: '100%'
+        };
 
-export class MapContainer extends Component {
-  render() {
-    return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{
-         lat: -41.097548,
-         lng: 174.869463
-        }}
-      />
-    );
-  }
-}
+        export class MapContainer extends Component {
+          render() {
+            return (
+              <Map
+                google={this.props.google}
+                zoom={14}
+                style={mapStyles}
+                initialCenter={{
+                 lat: -41.097548,
+                 lng: 174.869463
+                }}
+              />
+            );
+          }
+        }
 
-export default GoogleApiWrapper(
-  (props) => ({
-    apiKey: props.AIzaSyDe3hgpuy5UdubxL61Lz9KnX8GjVr4Pudk
-  }
-))(MapContainer)
-     
-Added a <Map /> to the bottom of contacts to test what I create renders as link is not working
+        export default GoogleApiWrapper(
+          (props) => ({
+            apiKey: props.AIzaSyDe3hgpuy5UdubxL61Lz9KnX8GjVr4Pudk
+          }
+        ))(MapContainer)
+
+        Added a <Map /> to the bottom of contacts to test what I create renders as link is not working
         
     
