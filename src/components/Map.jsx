@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 // import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { Link } from 'react-router-dom'
 
 
 const mapStyles = {
@@ -16,8 +17,8 @@ export class MapContainer extends Component {
         zoom={14}
         style={mapStyles}
         initialCenter={{
-         lat: -1.2884,
-         lng: 36.8233
+          lat: -41.097548,
+          lng: 174.869463
         }}
       />
     );
@@ -28,23 +29,11 @@ export default GoogleApiWrapper(
   (props) => ({
     apiKey: props.AIzaSyDe3hgpuy5UdubxL61Lz9KnX8GjVr4Pudk
   }
-))(MapContainer)
+  ))(MapContainer)
 
 
 
 
-// import React from 'react';
-// import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
-
-
-// class GoogleMapsContainer extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       showingInfoWindow: false,
-//       activeMarker: {},
-//       selectedPlace: {}
-//     }
 //     // binding this to event-handler functions
 //     this.onMarkerClick = this.onMarkerClick.bind(this);
 //     this.onMapClick = this.onMapClick.bind(this);
@@ -92,15 +81,12 @@ export default GoogleApiWrapper(
 //           visible={this.state.showingInfoWindow}
 //           onClose={this.onClose}
 //         >
-        
+
 //         </InfoWindow>
 //       </Map>
 //     );
 //   }
 // }
-// export default GoogleApiWrapper({
-//     api: 'AIzaSyDe3hgpuy5UdubxL61Lz9KnX8GjVr4Pudk'
-// })(GoogleMapsContainer)
 
 
 
@@ -114,20 +100,3 @@ export default GoogleApiWrapper(
 
 
 
-
-// const text= "This is text"
-
-// const Map =()=>(
-//   <div>{text}</div>
-
-
-// // <div>
-
-
-
-
-
-// // </div>
-
-// )
-// export default Map
