@@ -1,48 +1,43 @@
 
-      import React, { Component } from 'react';
-      import Contacts from './Contacts';
-      import {HashRouter as Router, Route} from 'react-router-dom'
-      import Map from './Map'
+import React, { Component } from 'react';
+import Contacts from './Contacts';
+import { HashRouter as Router, Route } from 'react-router-dom'
+import Map from './Map'
 
-    class App extends Component {
+class App extends Component {
 
-      state = {
-        contacts: []
-      }
+  state = {
+    contacts: []
+  }
 
-      componentDidMount() {
-        fetch('http://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then((data) => {
-          this.setState({ contacts: data })
-        })
-        .catch(console.log)
-      }
+  componentDidMount() {
+    fetch('http://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({ contacts: data })
+      })
+      .catch(console.log)
+  }
 
 
-      render() {
-        return (
+  render() {
+    return (
 
-      
 
-              <Router>
 
-              <Contacts contacts={this.state.contacts} />
+      <Router>
 
-              <Route exact path='/' component={this.state.Contacts} />
+        <Contacts contacts={this.state.contacts} />
 
-                  <Route path='/Map' component={Map}/>
+        <Route exact path='/' component={this.state.Contacts} />
 
-              </Router> 
+        <Route path='/Map' component={Map} />
 
-    
-        )
-        }
-    }
+      </Router>
 
-    export default App
 
-{/* <div>
-                   <Route exact path='/' component={Contacts} />
- </div> */}
-   
+    )
+  }
+}
+
+export default App
