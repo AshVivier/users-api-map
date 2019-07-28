@@ -1,48 +1,42 @@
 
-      import React, { Component } from 'react';
-      import Contacts from './Contacts';
-      import {HashRouter as Router, Route} from 'react-router-dom'
-      import Map from './Map'
-
-    class App extends Component {
-
-      state = {
-        contacts: []
-      }
-
-      componentDidMount() {
-        fetch('http://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then((data) => {
-          this.setState({ contacts: data })
-        })
-        .catch(console.log)
-      }
+import React, { Component } from 'react';
+import Contacts from './Contacts';
+// import { HashRouter as Router, Route } from 'react-router-dom'
 
 
-      render() {
-        return (
 
-      
+class App extends Component {
 
-              <Router>
+  state = {
+    contacts: []
+  }
 
-              <Contacts contacts={this.state.contacts} />
+  componentDidMount() {
+    fetch('http://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({ contacts: data })
+      })
+      .catch(console.log)
+  }
 
-              <Route exact path='/' component={this.state.Contacts} />
 
-                  <Route path='/Map' component={Map}/>
+  render() {
+    return (
 
-              </Router> 
 
-    
-        )
-        }
-    }
+        <Contacts contacts={this.state.contacts} /> 
+     
+    )
+  }
+}
+  
+        
 
-    export default App
+// var button = document.querySelector("button");
 
-{/* <div>
-                   <Route exact path='/' component={Contacts} />
- </div> */}
-   
+// button.addEventListener("click", () => {
+//   window.parent.open('https://maps.google.com/?q=latitude-value,longitude-value')
+//   });
+
+export default App
