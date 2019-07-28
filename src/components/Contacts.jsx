@@ -1,9 +1,8 @@
 import React from 'react'
 
-document.getElementById("myBtn").addEventListener("click",  () => {
-  window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
-})
-
+// document.getElementById("myBtn").addEventListener("click",  () => {
+//   window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
+// })
 
 function Contacts ({ contacts }){
 
