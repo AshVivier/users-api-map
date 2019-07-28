@@ -20,17 +20,18 @@ class App extends Component {
       .catch(console.log)
   }
 
+
   render() {
     return (
 
 
-        <Contacts contacts={this.state.contacts} />
-
+        <Contacts contacts={this.state.contacts} /> 
      
     )
   }
 }
-
+  
+        
 
 // var button = document.querySelector("button");
 
