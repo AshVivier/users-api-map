@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
 import Contacts from './Contacts';
-import { HashRouter as Router, Route } from 'react-router-dom'
-import Map from './Map'
+// import { HashRouter as Router, Route } from 'react-router-dom'
+
+
 
 class App extends Component {
 
@@ -24,20 +25,18 @@ class App extends Component {
     return (
 
 
-
-      <Router>
-
-        <Contacts contacts={this.state.contacts} />
-
-        <Route exact path='/' component={this.state.Contacts} />
-
-        <Route path='/Map' component={Map} />
-
-      </Router>
-
-
+        <Contacts contacts={this.state.contacts} /> 
+     
     )
   }
 }
+  
+        
+
+// var button = document.querySelector("button");
+
+// button.addEventListener("click", () => {
+//   window.parent.open('https://maps.google.com/?q=latitude-value,longitude-value')
+//   });
 
 export default App

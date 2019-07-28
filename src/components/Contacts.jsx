@@ -1,32 +1,54 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Map from './Map'
 
-const Contacts = ({ contacts }) => {
+document.getElementById("myBtn").addEventListener("click",  () => {
+  window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
+})
 
-  return (
+
+function Contacts ({ contacts }){
+
+  return (  
     <div>
       <center><h1>Contact List</h1></center>
       {contacts.map((contact) => (
-        <center>  <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Name: {contact.name}</h5>
 
-            <h6 class="card-subtitle mb-2">Email: {contact.email}</h6>
+        <center>  <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">Name: {contact.name}</h5>
 
-            <Link to='./Map'><button >Address: {contact.address.street}<br />
-              {contact.address.suite} <br /> {contact.address.city}</button></Link><br />
+            <h6 className="card-subtitle mb-2">Email: {contact.email}</h6>
 
-            <p class="card-text">Website: {contact.website}</p>
+            <button id="myBtn">Address: {contact.address.street}<br />
+              {contact.address.suite} <br /> {contact.address.city}</button>
+
+            <p className="card-text">Website: {contact.website}</p>
 
           </div>
+          
         </div></center>
       ))}
-      <Map />
+
     </div>
-  )
+  )                               
 };
 
-
-
 export default Contacts
+
+//  <input type='button' onClick={window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)} value='click here to go to Google maps location' ></input> 
+
+
+// onLinkClicked =()=>{
+  //  window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
+  // },
+
+
+// var button = document.querySelector("button")
+
+// button.addEventListener("click", () => {
+//    window.open('https://maps.google.com/?q='+contacts.address.geo.lat+","+contacts.address.geo.lng)
+// })
+      
+
+
+{/* <button onClick={window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)}>Address: {contact.address.street}<br />
+              {contact.address.suite} <br /> {contact.address.city}</button> */}
