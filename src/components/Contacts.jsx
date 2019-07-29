@@ -1,37 +1,71 @@
 import React from 'react'
 
-// document.getElementById("myBtn").addEventListener("click",  () => {
-//   window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
-// })
+              function Contacts ({ contacts }){
+                function openGoogleMaps(contact) {
+                  console.log(`openGoogleMaps ${JSON.stringify(contact)}`)
+                  window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
+                }
+                
+                return (  
+                  <div>
+                    <center><h1>Contact List</h1></center>
+                    {contacts.map((contact) => (
+              
+                      <center>  <div className="card">
+                        <div className="card-body">
+                          <h5 className="card-title">Name: {contact.name}</h5>
+              
+                          <h6 className="card-subtitle mb-2">Email: {contact.email}</h6>
+              
+                          <button id="myBtn" onClick={(e) => openGoogleMaps(contact)} >Address: {contact.address.street} <br />
+                            {contact.address.suite} <br /> {contact.address.city}</button>
+              
+                          <p className="card-text">Website: {contact.website}</p>
+              
+                        </div>
+                        
+                      </div></center>
+                    ))}
+              
+                  </div>
+                )                               
+              };
+              
+              export default Contacts
 
-function Contacts ({ contacts }){
+              // // document.getElementById("myBtn").addEventListener("click",  () => {
+// //   window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)
+// // })
 
-  return (  
-    <div>
-      <center><h1>Contact List</h1></center>
-      {contacts.map((contact) => (
+// function Contacts ({ contacts }){
 
-        <center>  <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Name: {contact.name}</h5>
+//   return (  
+//     <div>
+//       <center><h1>Contact List</h1></center>
+//       {contacts.map((contact) => (
 
-            <h6 className="card-subtitle mb-2">Email: {contact.email}</h6>
+//         <center>  <div className="card">
+//           <div className="card-body">
+//             <h5 className="card-title">Name: {contact.name}</h5>
 
-            <button id="myBtn">Address: {contact.address.street}<br />
-              {contact.address.suite} <br /> {contact.address.city}</button>
+//             <h6 className="card-subtitle mb-2">Email: {contact.email}</h6>
 
-            <p className="card-text">Website: {contact.website}</p>
+//             <button id="myBtn">Address: {contact.address.street}<br />
+//               {contact.address.suite} <br /> {contact.address.city}</button>
 
-          </div>
+//             <p className="card-text">Website: {contact.website}</p>
+
+//           </div>
           
-        </div></center>
-      ))}
+//         </div></center>
+//       ))}
 
-    </div>
-  )                               
-};
+//     </div>
+//   )                               
+// };
 
-export default Contacts
+// export default Contacts
+
 
 //  <input type='button' onClick={window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)} value='click here to go to Google maps location' ></input> 
 
@@ -52,3 +86,4 @@ export default Contacts
 {/* <button onClick={window.open('https://maps.google.com/?q='+contact.address.geo.lat+","+contact.address.geo.lng)}>Address: {contact.address.street}<br />
               {contact.address.suite} <br /> {contact.address.city}</button> */}
 
+              // import React from 'react'
